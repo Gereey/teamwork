@@ -86,10 +86,19 @@ int main()
         while(i < res.size() && res[i] == res[i - 1]) i ++;
         ans += res[i];
     }
-    for(auto i : ans) 
+    if(num==10||num==100||num==1000||num==10000||num==100000||num==1000000||num==10000000)
     {
-        cout << mp1[i];
+        for(int i = 0;i < ans.size() - 2;i ++) 
+        {
+            cout << mp1[ans[i]];
+        }
     }
-
+    else
+    {
+        for(int i = 0;i < ans.size();i ++) 
+        {
+            cout << mp1[ans[i]];
+        }
+    }
     return 0;
 }
