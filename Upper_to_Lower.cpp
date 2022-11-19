@@ -1,5 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
 map<char,string> mp1{{'0',"零"},{'1',"壹"},{'2',"贰"},{'3',"叁"},{'4',"肆"},{'5',"伍"},{'6',"陆"},{'7',"柒"},{'8',"捌"},{'9',"玖"},{'a',"拾"},{'b',"佰"},{'c',"仟"},{'d',"万"},{'e',"亿"}};
 map<int,string> mp{{0,"0"},{1,"1"},{2,"2"},{3,"3"},{4,"4"},{5,"5"},{6,"6"},{7,"7"},{8,"8"},{9,"9"}};
 vector<int> s;
@@ -59,24 +57,18 @@ string func1(long long num)
     }
     return res;
 }
-int main()
+void solve(string str)
 {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    //freopen("in.txt","r",stdin);
-    //freopen("out.txt","w",stdout);
-    string iii;
-    cin >> iii;
     long long num = 0;
-    for(int i = 0;i < iii.size();i ++)
+    for(int i = 0;i < str.size();i ++)
     {
-        num = num * 10 + iii[i] - '0';
+        num = num * 10 + str[i] - '0';
     }
 
     if(num == 0)
     {
         cout << "零" ;
-        return 0;
+        return;
     }
     auto tt = num;
     while(tt > 0)
@@ -106,5 +98,5 @@ int main()
             cout << mp1[ans[i]];
         }
     }
-    return 0;
+
 }
