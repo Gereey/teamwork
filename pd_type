@@ -1,0 +1,27 @@
+//1表示大写，2表示小写 
+int pd_type(string &Bnumber)//传入数字 
+{
+    int flag = 1;
+    char *temp;
+    char lst[] = "0,1,2,3,4,5,6,7,8,9";
+    temp = strtok(lst,",");//以逗号分割 
+    while(temp != NULL) 
+    {
+        for(int i = 0;i<Bnumber.length();i++)
+        {
+        	if(*temp == Bnumber[i])//判断是不是相等，如果出现有一次相等则表示又出现lst数组里面的数值，也就是小写 
+        	{
+        		flag = 2;
+//        		cout<<flag<<endl;
+        		return flag;
+			}
+			else
+			{
+				flag = 1;
+			}
+		}
+		temp = strtok(NULL,",");
+	}
+//	cout<<flag<<endl;
+    return flag;
+}
