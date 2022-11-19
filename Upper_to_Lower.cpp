@@ -65,8 +65,14 @@ int main()
     ios::sync_with_stdio(false);
     //freopen("in.txt","r",stdin);
     //freopen("out.txt","w",stdout);
-    long long num;
-    cin >> num;
+    string iii;
+    cin >> iii;
+    long long num = 0;
+    for(int i = 0;i < iii.size();i ++)
+    {
+        num = num * 10 + iii[i] - '0';
+    }
+
     if(num == 0)
     {
         cout << "零" ;
